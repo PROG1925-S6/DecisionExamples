@@ -10,9 +10,9 @@ namespace DecisionExamples
     {
         static void Main(string[] args)
         {
-            int age, number1, number2, category;
+            int age, number1, number2;
             double hours, overtime;
-            string suit, day;
+            string suit, day, category;
             bool socksOn, hatOn;
 
             // 1. determine if a person is old enough to vote. 
@@ -98,6 +98,98 @@ namespace DecisionExamples
             else
             {
                 Console.WriteLine("invalid input");
+            }
+
+            //7. Do the same as above but use an OR statement
+            if (suit == "spade" || suit == "clubs")
+            {
+                Console.WriteLine("The colour is black");
+            }
+            else if (suit == "hearts" || suit == "diamonds")
+            {
+                Console.WriteLine("The colour is red");
+            }
+            else
+            {
+                Console.WriteLine("invalid input");
+            }
+
+            //8. Use AND statements to see if two conditions are true
+            socksOn = false;
+            hatOn = true;
+
+            if (socksOn == true && hatOn == true)
+            {
+                Console.WriteLine("You are wearing both a hat and socks.");
+            }
+            else if (socksOn == false && hatOn == false)
+            {
+                Console.WriteLine("You are weating neither a hat or socks");
+            }
+            else if (socksOn == true) 
+            {
+                Console.WriteLine("You are wearing socks but no hat");
+            }
+            else
+            {
+                Console.WriteLine("You are wearing a hat but no socks");
+
+            }
+
+            // 9. Determine hurricane wind speeds
+            Console.Write("Please enter a category: ");
+            category = Console.ReadLine();
+
+            switch(category)
+            {
+                case "1":
+                    Console.WriteLine("119-153 km/hr");
+                    break;
+                case "2":
+                    Console.WriteLine("154-177 km/hr");
+                    break;
+                case "3":
+                    Console.WriteLine("178-209 km/hr");
+                    break;
+                case "4":
+                    Console.WriteLine("210-249 km/hr");
+                    break;
+                case "5":
+                    Console.WriteLine("greater than 249 km/hr");
+                    break;
+                default:
+                    Console.WriteLine("That is not a category");
+                    break;
+            }
+
+            day = "saturday";
+
+            switch(day)
+            {
+                case "Monday":
+                    Console.WriteLine("It's a weekday");
+                    break;
+                case "Tuesday":
+                    Console.WriteLine("It's a weekday");
+                    break;
+                case "Wednesday":
+                    Console.WriteLine("It's a weekday");
+                    break;
+                case "Thursday":
+                    Console.WriteLine("It's a weekday");
+                    break;
+                case "Friday":
+                    Console.WriteLine("It's a weekday");
+                    break;
+                case "Saturday":
+                    Console.WriteLine("It's the weekend!!!!!!");
+                    break;
+                case "Sunday":
+                    Console.WriteLine("It's the weekend!!!!!!");
+                    break;
+                default:
+                    Console.WriteLine("Invalid day entered");
+                    break;
             }
 
             Console.ReadKey();
